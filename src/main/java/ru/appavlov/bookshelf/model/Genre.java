@@ -25,9 +25,9 @@ public class Genre {
 
     private String name;
 
-    @Basic(fetch = FetchType.LAZY)
-    @OneToMany(mappedBy = "genre")
-    private List<Book> books;
+//    @Basic(fetch = FetchType.LAZY)
+//    @OneToMany(mappedBy = "genre")
+//    private List<Book> books;
 
 
     @Override
