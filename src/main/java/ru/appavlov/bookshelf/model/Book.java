@@ -1,4 +1,4 @@
-package ru.appavlov.food.web.service.model;
+package ru.appavlov.bookshelf.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

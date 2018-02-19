@@ -1,4 +1,4 @@
-package ru.appavlov.food.web.service.model;
+package ru.appavlov.bookshelf.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -8,33 +8,31 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SelectBeforeUpdate;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
-@Entity
-@Table(catalog = "library")
 @EqualsAndHashCode(of = "id")
-@Getter @Setter
+@Table(catalog = "library")
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate
-public class Author {
+@Entity
+@Getter @Setter
+public class Genre {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String fio;
-
-    private Date birthday;
+    private String name;
 
     @Basic(fetch = FetchType.LAZY)
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "genre")
     private List<Book> books;
+
 
     @Override
     public String toString() {
-        return fio;
+        return name;
     }
 
 }

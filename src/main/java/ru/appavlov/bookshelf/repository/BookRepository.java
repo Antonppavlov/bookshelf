@@ -1,8 +1,8 @@
-package ru.appavlov.food.web.service.repository;
+package ru.appavlov.bookshelf.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.appavlov.food.web.service.model.Book;
+import ru.appavlov.bookshelf.model.Book;
 
 import java.util.List;
 

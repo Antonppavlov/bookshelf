@@ -1,4 +1,4 @@
-package ru.appavlov.food.web.service.model;
+package ru.appavlov.bookshelf.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -12,12 +12,12 @@ import java.util.List;
 
 @EqualsAndHashCode(of = "id")
 @Table(catalog = "library")
+@Getter @Setter
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate
 @Entity
-@Getter @Setter
-public class Genre {
+public class Publisher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,9 +26,8 @@ public class Genre {
     private String name;
 
     @Basic(fetch = FetchType.LAZY)
-    @OneToMany(mappedBy = "genre")
+    @OneToMany(mappedBy = "publisher")
     private List<Book> books;
-
 
     @Override
     public String toString() {
