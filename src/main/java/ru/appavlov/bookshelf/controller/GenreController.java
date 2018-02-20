@@ -1,5 +1,6 @@
 package ru.appavlov.bookshelf.controller;
 
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +10,7 @@ import ru.appavlov.bookshelf.model.Genre;
 import ru.appavlov.bookshelf.repository.GenreRepository;
 
 import java.util.List;
-
+@Log
 @Controller
 @RequestMapping(path = "/genre")
 public class GenreController {
@@ -19,7 +20,8 @@ public class GenreController {
 
     @GetMapping(path = "/all")
     public @ResponseBody
-    List<Genre> findAll() {
-        return genreRepository.findAll();
+    String findAll() {
+        List<Genre> all = genreRepository.findAll();
+        return "cool";
     }
 }
