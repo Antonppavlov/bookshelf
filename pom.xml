@@ -15,11 +15,12 @@
 
         <targetJdk>1.8</targetJdk>
         <java.version>1.8</java.version>
+        <javaee-api.version>8.0</javaee-api.version>
 
         <lombok.version>1.16.20</lombok.version>
-        <primefaces.version>6.1</primefaces.version>
+        <primefaces.version>6.0</primefaces.version>
         <omnifaces.version>3.0</omnifaces.version>
-        <bootsfaces.version>1.2.0</bootsfaces.version>
+        <bootsfaces.version>1.0.0</bootsfaces.version>
         <themes-bootstrap.version>1.0.10</themes-bootstrap.version>
         <el-api.version>3.0.0</el-api.version>
         <commons-io.version>2.6</commons-io.version>
@@ -63,6 +64,12 @@
 
 
         <!--++++++++++++++++++++++++++++++++Front end+++++++++++++++++++++++++++++++++++-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javaee-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
         <!--jsd + внешние компоненты для отображения-->
         <dependency>
             <groupId>org.primefaces</groupId>
