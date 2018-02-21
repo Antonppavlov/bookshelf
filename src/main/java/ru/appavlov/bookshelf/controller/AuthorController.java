@@ -6,7 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import ru.appavlov.bookshelf.model.Author;
 import ru.appavlov.bookshelf.repository.AuthorRepository;
+
+import java.util.List;
 
 @Log
 @Controller
@@ -19,7 +22,7 @@ public class AuthorController {
     @GetMapping(path = "/all")
     public @ResponseBody
     String findAll() {
-        authorRepository.findAll();
+        List<Author> all = authorRepository.findAll();
         return "author";
     }
 }

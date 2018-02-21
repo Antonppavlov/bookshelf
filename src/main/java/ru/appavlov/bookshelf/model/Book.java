@@ -14,7 +14,8 @@ import javax.persistence.*;
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate
-@Setter @Getter
+@Setter
+@Getter
 @EqualsAndHashCode(of = "id")
 public class Book {
 
@@ -34,16 +35,36 @@ public class Book {
         this.descr = descr;
         this.viewCount = viewCount;
         this.totalRating = totalRating;
-        this.totalVoteCount=totalVoteCount;
+        this.totalVoteCount = totalVoteCount;
+        this.avgRating = avgRating;
+    }
+
+    public Book(Long id, String name, Integer pageCount, String isbn, Genre genre, Author author, Publisher publisher, Integer publishYear, String descr, long viewCount, long totalRating, long totalVoteCount, int avgRating) {
+        this.id = id;
+        this.name = name;
+        this.pageCount = pageCount;
+        this.isbn = isbn;
+        this.genre = genre;
+        this.author = author;
+        this.publisher = publisher;
+        this.publishYear = publishYear;
+        this.descr = descr;
+        this.viewCount = viewCount;
+        this.totalRating = totalRating;
+        this.totalVoteCount = totalVoteCount;
         this.avgRating = avgRating;
     }
 
     public Book(Long id, byte[] image) {
         this.id = id;
         this.image = image;
-
     }
 
+    public Book(Long id, String name, byte[] content) {
+        this.id = id;
+        this.name = name;
+        this.content = content;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -62,7 +83,6 @@ public class Book {
     private String isbn;
 
 
-
     @ManyToOne
     @JoinColumn
     private Genre genre;
@@ -74,7 +94,6 @@ public class Book {
     @ManyToOne
     @JoinColumn
     private Publisher publisher;
-
 
 
     @Column(name = "publish_year")
