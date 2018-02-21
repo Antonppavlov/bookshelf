@@ -16,7 +16,8 @@ import java.util.List;
 @DynamicInsert
 @SelectBeforeUpdate
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 public class Genre {
 
     @Id

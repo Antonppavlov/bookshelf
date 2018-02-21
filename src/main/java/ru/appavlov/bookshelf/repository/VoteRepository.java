@@ -4,7 +4,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.appavlov.bookshelf.model.Author;
 import ru.appavlov.bookshelf.model.Vote;
 
 import java.util.List;

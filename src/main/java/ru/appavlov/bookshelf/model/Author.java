@@ -14,7 +14,8 @@ import java.util.List;
 @Entity
 @Table(catalog = "library")
 @EqualsAndHashCode(of = "id")
-@Getter @Setter
+@Getter
+@Setter
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate
@@ -28,7 +29,7 @@ public class Author {
 
     private Date birthday;
 
-    @Basic(fetch = FetchType.LAZY,optional = false)
+    @Basic(fetch = FetchType.LAZY, optional = false)
     @OneToMany(mappedBy = "author")
     private List<Book> books;
 

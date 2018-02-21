@@ -7,7 +7,7 @@ import org.springframework.data.domain.Sort;
 import java.util.List;
 
 // общее поведения для всех DAO объектов
-public interface GeneralDAO<T>{
+public interface GeneralDAO<T> {
 
     // получение всех записей (без постраничности)
     List<T> getAll();

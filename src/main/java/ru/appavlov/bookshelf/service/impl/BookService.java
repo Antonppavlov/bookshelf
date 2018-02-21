@@ -53,7 +53,7 @@ public class BookService implements BookDao {
     public Book save(Book book) {
         bookRepository.save(book);
 
-        if (book.getContent()!=null) {
+        if (book.getContent() != null) {
             bookRepository.updateContent(book.getContent(), book.getId());
         }
 
@@ -77,7 +77,7 @@ public class BookService implements BookDao {
     }
 
     public List<Book> findTopBooks(int limit) {
-        return bookRepository.findTopBooks(new PageRequest(0,limit, new Sort(Sort.Direction.DESC, "viewCount")));
+        return bookRepository.findTopBooks(new PageRequest(0, limit, new Sort(Sort.Direction.DESC, "viewCount")));
     }
 
     @Override

@@ -53,7 +53,7 @@ public class PublisherService implements PublisherDao {
     }
 
     @Override
-    public void delete(Publisher publisher){
+    public void delete(Publisher publisher) {
         publisherRepository.delete(publisher);
     }
 
@@ -61,8 +61,6 @@ public class PublisherService implements PublisherDao {
     public Publisher get(long id) {
         return publisherRepository.findOne(id);
     }
-
-
 
 
 }

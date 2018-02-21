@@ -7,7 +7,7 @@ import ru.appavlov.bookshelf.model.Book;
 import java.util.List;
 
 // описывает специфичное поведение для работы с книгами
-public interface BookDao extends GeneralDAO<Book>{
+public interface BookDao extends GeneralDAO<Book> {
 
     // поиск топовых книг
     List<Book> findTopBooks(int limit);

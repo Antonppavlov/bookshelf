@@ -10,6 +10,7 @@ import ru.appavlov.bookshelf.model.Genre;
 import ru.appavlov.bookshelf.repository.GenreRepository;
 
 import java.util.List;
+
 @Log
 @Controller
 @RequestMapping(path = "/genre")

@@ -24,7 +24,7 @@ public class GenreService implements GenreDao {
 
     @Override
     public List<Genre> getAll() {
-       return genreRepository.findAll();
+        return genreRepository.findAll();
     }
 
     public List<Genre> getAll(Sort sort) {
@@ -64,8 +64,6 @@ public class GenreService implements GenreDao {
     public Genre get(long id) {
         return genreRepository.findOne(id);
     }
-
-
 
 
 }

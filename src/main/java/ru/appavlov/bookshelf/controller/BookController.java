@@ -28,7 +28,7 @@ public class BookController {
     List<Book> findAll() {
         Page<Book> allWithoutContent =
                 bookRepository.findAllWithoutContentAndImage(
-                        new PageRequest(0, 10, new Sort(Direction.ASC,"name"))
+                        new PageRequest(0, 10, new Sort(Direction.ASC, "name"))
                 );
         return allWithoutContent.getContent();
     }

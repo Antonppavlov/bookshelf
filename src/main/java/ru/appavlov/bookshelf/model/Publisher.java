@@ -12,7 +12,8 @@ import java.util.List;
 
 @EqualsAndHashCode(of = "id")
 @Table(catalog = "library")
-@Getter @Setter
+@Getter
+@Setter
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate
