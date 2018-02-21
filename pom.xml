@@ -15,12 +15,12 @@
 
         <targetJdk>1.8</targetJdk>
         <java.version>1.8</java.version>
-        <javaee-api.version>8.0</javaee-api.version>
+        <javaee-api.version>7.0</javaee-api.version>
 
         <lombok.version>1.16.20</lombok.version>
-        <primefaces.version>6.0</primefaces.version>
+        <primefaces.version>6.1</primefaces.version>
         <omnifaces.version>3.0</omnifaces.version>
-        <bootsfaces.version>1.0.0</bootsfaces.version>
+        <bootsfaces.version>1.2.0</bootsfaces.version>
         <themes-bootstrap.version>1.0.10</themes-bootstrap.version>
         <el-api.version>3.0.0</el-api.version>
         <commons-io.version>2.6</commons-io.version>
@@ -89,11 +89,11 @@
         </dependency>
         <!-- тема bootstrap  для primefaces(стили по умолчанию) -->
         <!--TODO нужно добавить репозиторий в мавен центр-->
-        <dependency>
-            <groupId>org.primefaces.themes</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>${themes-bootstrap.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.primefaces.themes</groupId>-->
+            <!--<artifactId>bootstrap</artifactId>-->
+            <!--<version>${themes-bootstrap.version}</version>-->
+        <!--</dependency>-->
 
 
         <!-- для взаимодействия с бекендом -->

@@ -12,6 +12,7 @@
             <default-locale>ru</default-locale>
         </locale-config>
 
+        <!--файл с стрингами + локализация-->
         <resource-bundle>
             <base-name>library</base-name>
             <var>msg</var>
