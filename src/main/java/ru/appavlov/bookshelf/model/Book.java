@@ -60,11 +60,6 @@ public class Book {
         this.image = image;
     }
 
-    public Book(Long id, String name, byte[] content) {
-        this.id = id;
-        this.name = name;
-        this.content = content;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
