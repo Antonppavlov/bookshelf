@@ -44,16 +44,19 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     Page<Book> findBooksWhereGenre(@Param("genreId") long genreId, Pageable pageable); // возвращает список книг (с постраничностью)
 
     // если запрос изменяет данные - нужен @Modifying
+    //апдейт картинки
     @Modifying(clearAutomatically = true)
     @Query("update Book b set b.viewCount=:viewCount where b.id =:id")
     void updateViewCount(long viewCount, long id);
 
     // если запрос изменяет данные - нужен @Modifying
+    //изменение рейтинга
     @Modifying(clearAutomatically = true)
     @Query("update Book b set b.totalRating=:totalRating, b.totalVoteCount=:totalVoteCount,b.avgRating=:avgRating where b.id =:id")
     void updateRating(long totalRating, long totalVoteCount, int avgRating, long id);
 
     // если запрос изменяет данные - нужен @Modifying
+    //апдейт контента
     @Modifying(clearAutomatically = true)
     @Query("update Book b set b.content=:content where b.id =:id")
     void updateContent(@Param("content") byte[] content, @Param("id") long id);
