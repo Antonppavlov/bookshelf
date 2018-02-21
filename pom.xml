@@ -15,6 +15,15 @@
 
         <targetJdk>1.8</targetJdk>
         <java.version>1.8</java.version>
+
+        <lombok.version>1.16.20</lombok.version>
+        <primefaces.version>6.1</primefaces.version>
+        <omnifaces.version>3.0</omnifaces.version>
+        <bootsfaces.version>1.2.0</bootsfaces.version>
+        <themes-bootstrap.version>1.0.10</themes-bootstrap.version>
+        <el-api.version>3.0.0</el-api.version>
+        <commons-io.version>2.6</commons-io.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
     </properties>
 
     <parent>
@@ -22,22 +31,18 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.10.RELEASE</version>
     </parent>
-
+    <!--++++++++++++++++++++++++++++++++++Back end++++++++++++++++++++++++++++++++++-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <!-- JPA Data (We are going to use Repositories, Entities, Hibernate, etc...) -->
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
         <!-- Use MySQL Connector-J -->
-
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -46,15 +51,62 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.20</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+
+        <!--++++++++++++++++++++++++++++++++Front end+++++++++++++++++++++++++++++++++++-->
+        <!--jsd + внешние компоненты для отображения-->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.omnifaces</groupId>
+            <artifactId>omnifaces</artifactId>
+            <version>${omnifaces.version}</version>
+        </dependency>
+        <!-- bootstrap для jsf -->
+        <dependency>
+            <groupId>net.bootsfaces</groupId>
+            <artifactId>bootsfaces</artifactId>
+            <version>${bootsfaces.version}</version>
+        </dependency>
+        <!-- тема bootstrap  для primefaces(стили по умолчанию) -->
+        <!--TODO нужно добавить репозиторий в мавен центр-->
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${themes-bootstrap.version}</version>
+        </dependency>
+
+
+        <!-- для взаимодействия с бекендом -->
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>${el-api.version}</version>
+        </dependency>
+        <!-- для загрузки файлов в приложение -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${commons-fileupload.version}</version>
+        </dependency>
+        <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
     </dependencies>
 
 
