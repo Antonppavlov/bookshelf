@@ -19,17 +19,7 @@
     <properties>
         <project.encoding>UTF-8</project.encoding>
         <project.java.version>1.8</project.java.version>
-
-        <!--<javaee-api.version>7.0</javaee-api.version>-->
-
         <lombok.version>1.16.20</lombok.version>
-        <!--<primefaces.version>6.1</primefaces.version>-->
-        <!--<omnifaces.version>3.0</omnifaces.version>-->
-        <!--<bootsfaces.version>1.2.0</bootsfaces.version>-->
-        <!--<themes-bootstrap.version>1.0.10</themes-bootstrap.version>-->
-        <!--<el-api.version>3.0.0</el-api.version>-->
-        <!--<commons-io.version>2.6</commons-io.version>-->
-        <!--<commons-fileupload.version>1.3.3</commons-fileupload.version>-->
     </properties>
 
 
@@ -38,8 +28,6 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.10.RELEASE</version>
     </parent>
-    <!--++++++++++++++++++++++++++++++++++Back end++++++++++++++++++++++++++++++++++-->
-
 
     <dependencies>
         <!--spring boot основная зависимость-->
@@ -58,84 +46,18 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <!-- позволяет просмотреть доступные url и передаваемые параметры сервиса -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <!--&lt;!&ndash;подключение шаблонизатора&ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash;разграничение доступа &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-security</artifactId>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash;для тестов &ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-test</artifactId>-->
-        <!--<scope>test</scope>-->
-        <!--</dependency>-->
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-
-
-        <!--++++++++++++++++++++++++++++++++Front end+++++++++++++++++++++++++++++++++++-->
-        <!--<dependency>-->
-        <!--<groupId>javax</groupId>-->
-        <!--<artifactId>javaee-api</artifactId>-->
-        <!--<version>${javaee-api.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash;jsd + внешние компоненты для отображения&ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>org.primefaces</groupId>-->
-        <!--<artifactId>primefaces</artifactId>-->
-        <!--<version>${primefaces.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.omnifaces</groupId>-->
-        <!--<artifactId>omnifaces</artifactId>-->
-        <!--<version>${omnifaces.version}</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; bootstrap для jsf &ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>net.bootsfaces</groupId>-->
-        <!--<artifactId>bootsfaces</artifactId>-->
-        <!--<version>${bootsfaces.version}</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; тема bootstrap  для primefaces(стили по умолчанию) &ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>org.primefaces.themes</groupId>-->
-        <!--<artifactId>bootstrap</artifactId>-->
-        <!--<version>${themes-bootstrap.version}</version>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash; для взаимодействия с бекендом &ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>javax.el</groupId>-->
-        <!--<artifactId>javax.el-api</artifactId>-->
-        <!--<version>${el-api.version}</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; для загрузки файлов в приложение &ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>commons-io</groupId>-->
-        <!--<artifactId>commons-io</artifactId>-->
-        <!--<version>${commons-io.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>commons-fileupload</groupId>-->
-        <!--<artifactId>commons-fileupload</artifactId>-->
-        <!--<version>${commons-fileupload.version}</version>-->
-        <!--</dependency>-->
-        <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
     </dependencies>
 
     <build>
