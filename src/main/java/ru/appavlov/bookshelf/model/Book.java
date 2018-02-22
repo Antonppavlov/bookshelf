@@ -1,5 +1,6 @@
 package ru.appavlov.bookshelf.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -68,6 +69,7 @@ public class Book {
     private String name;
 
     @Lob
+    @JsonIgnore
     @Column(updatable = false)
     @Basic(fetch = FetchType.LAZY)
     private byte[] content;
@@ -94,6 +96,7 @@ public class Book {
     @Column(name = "publish_year")
     private Integer publishYear;
 
+    @JsonIgnore
     @Basic(fetch = FetchType.LAZY)
     private byte[] image;
 
