@@ -12,7 +12,6 @@ spring:
       password: root
       sql-script-encoding: UTF-8
 
-
     jpa:
         database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
         properties:
@@ -35,3 +34,5 @@ logging:
         org.springframework.security: warn
         org.hibernate: warn
         org.hibernate.type.descriptor.sql: warn
+server:
+  port: 9999

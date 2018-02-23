@@ -1,5 +1,6 @@
 package ru.appavlov.bookshelf.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,6 +27,7 @@ public class Publisher {
 
     private String name;
 
+    @JsonIgnore
     @Basic(fetch = FetchType.LAZY)
     @OneToMany(mappedBy = "publisher")
     private List<Book> books;
