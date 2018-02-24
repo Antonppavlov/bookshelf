@@ -2,13 +2,11 @@ package ru.appavlov.bookshelf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"ru.appavlov.bookshelf"})
 public class Application {
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
