@@ -35,4 +35,4 @@ logging:
         org.hibernate: warn
         org.hibernate.type.descriptor.sql: warn
 server:
-  port: 9999
+  port: 8080
