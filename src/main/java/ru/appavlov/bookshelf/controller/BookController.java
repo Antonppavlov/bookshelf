@@ -31,7 +31,6 @@ public class BookController {
         return bookService.getAll(pageNumber, pageSize, "fio", Sort.Direction.ASC).getContent();
     }
 
-
     // поиск записей без постраничности (сразу весь список)
     @RequestMapping("/search")
     public List<Book> search(@RequestParam("fio") String fio) {

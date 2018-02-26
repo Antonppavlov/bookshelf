@@ -1,0 +1,23 @@
+version: '2'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - SERVER_PORT=3306
+    ports:
+        - "3306:3306"
+
+  bookshelf:
+    image: antonppavlov/bookshelf:latest
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/library?useSSL=false&useUnicode=yes&characterEncoding=UTF-8
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SERVER_PORT=8888
+    links:
+      - db
+    ports:
+      - "8888:8080"
