@@ -11,7 +11,7 @@ public class MainController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String baseUrlRedirect() {
-        return "Hello!";
+        return "Hello Spring!";
     }
 }
 
