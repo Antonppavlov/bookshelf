@@ -79,7 +79,6 @@ public class Book {
 
     private String isbn;
 
-
     @ManyToOne
     @JoinColumn
     private Genre genre;
@@ -91,7 +90,6 @@ public class Book {
     @ManyToOne
     @JoinColumn
     private Publisher publisher;
-
 
     @Column(name = "publish_year")
     private Integer publishYear;

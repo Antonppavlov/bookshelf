@@ -17,20 +17,17 @@ public class AuthorController {
     @Autowired
     private AuthorService authorService;
 
-
     // получить все записи без сортировки (сортировку уже могут сами выбирать на стороне клиента)
     @RequestMapping("/all")
     public List<Author> getAuthors() {
         return authorService.getAll();
     }
 
-
     // возвращает всезаписи с постраничностью
     @RequestMapping("/allPage")
     public List<Author> allPage(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize) {
         return authorService.getAll(pageNumber, pageSize, "fio", Sort.Direction.ASC).getContent();
     }
-
 
     // поиск записей без постраничности (сразу весь список)
     @RequestMapping("/search")
@@ -60,6 +57,5 @@ public class AuthorController {
         authorService.save(author);
         return true;
     }
-
 
 }

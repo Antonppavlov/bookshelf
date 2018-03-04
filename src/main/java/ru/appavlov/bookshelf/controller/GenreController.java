@@ -60,5 +60,4 @@ public class GenreController {
         genreService.save(genre);
         return true;
     }
-
 }

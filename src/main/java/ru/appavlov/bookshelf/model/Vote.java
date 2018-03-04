@@ -30,5 +30,4 @@ public class Vote {
     private Date bookId;
 
     private String username;
-
 }

@@ -17,10 +17,8 @@ import java.util.List;
 @Transactional
 public class GenreService implements GenreDao {
 
-
     @Autowired
     private GenreRepository genreRepository;
-
 
     @Override
     public List<Genre> getAll() {
@@ -31,12 +29,10 @@ public class GenreService implements GenreDao {
         return genreRepository.findAll(sort);
     }
 
-
     @Override
     public Page<Genre> getAll(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection) {
         return genreRepository.findAll(new PageRequest(pageNumber, pageSize, new Sort(sortDirection, sortField)));
     }
-
 
     @Override
     public List<Genre> search(String... searchString) {
@@ -47,7 +43,6 @@ public class GenreService implements GenreDao {
     public Page<Genre> search(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection, String... searchString) {
         return genreRepository.findByNameContainingIgnoreCaseOrderByName(searchString[0], new PageRequest(pageNumber, pageSize, new Sort(sortDirection, sortField)));
     }
-
 
     @Override
     public Genre save(Genre genre) {
@@ -64,6 +59,4 @@ public class GenreService implements GenreDao {
     public Genre get(long id) {
         return genreRepository.findOne(id);
     }
-
-
 }

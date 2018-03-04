@@ -23,5 +23,4 @@ public interface BookDao extends GeneralDAO<Book> {
 
     // обновить данные рейтинга
     void updateRating(long totalRating, long totalVoteCount, int avgRating, long id);
-
 }

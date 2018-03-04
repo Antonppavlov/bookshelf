@@ -39,5 +39,4 @@ public class Author {
     public String toString() {
         return fio;
     }
-
 }

@@ -33,6 +33,4 @@ public interface GeneralDAO<T> {
     //TODO нужно сделать для всех реализаций корректную работу
     // поиск записей с постраничностью
     Page<T> search(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection, String... searchString);
-
-
 }

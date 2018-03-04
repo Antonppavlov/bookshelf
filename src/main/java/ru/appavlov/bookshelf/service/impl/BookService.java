@@ -20,7 +20,6 @@ public class BookService implements BookDao {
     @Autowired
     private BookRepository bookRepository;
 
-
     @Override
     public List<Book> getAll() {
         return bookRepository.findAll();
@@ -41,13 +40,11 @@ public class BookService implements BookDao {
         return null;
     }
 
-
     @Override
     public Page<Book> search(int pageNumber, int pageSize, String sortField, Sort.Direction sortDirection, String... searchString) {
         // чтобы название метода не было слишком длинным - можно использовать @Query c HQL (если больше 2-х переменных)
         return bookRepository.findByNameContainingIgnoreCaseOrAuthorFioContainingIgnoreCaseOrderByName(searchString[0], new PageRequest(pageNumber, pageSize, new Sort(sortDirection, sortField)));
     }
-
 
     @Override
     public Book save(Book book) {
@@ -58,7 +55,6 @@ public class BookService implements BookDao {
         }
 
         return book;
-
     }
 
     @Override
@@ -76,6 +72,7 @@ public class BookService implements BookDao {
         return bookRepository.findContentBook(id);
     }
 
+    @Override
     public List<Book> findTopBooks(int limit) {
         return bookRepository.findTopBooks(new PageRequest(0, limit, new Sort(Sort.Direction.DESC, "viewCount")));
     }
@@ -94,6 +91,4 @@ public class BookService implements BookDao {
     public void updateRating(long totalRating, long totalVoteCount, int avgRating, long id) {
         bookRepository.updateRating(totalRating, totalVoteCount, avgRating, id);
     }
-
-
 }

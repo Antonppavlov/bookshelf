@@ -23,13 +23,11 @@ public class PublisherController {
         return publisherService.getAll();
     }
 
-
     // возвращает всезаписи с постраничностью
     @RequestMapping("/allPage")
     public List<Publisher> allPage(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize) {
         return publisherService.getAll(pageNumber, pageSize, "fio", Sort.Direction.ASC).getContent();
     }
-
 
     // поиск записей без постраничности (сразу весь список)
     @RequestMapping("/search")
@@ -62,6 +60,4 @@ public class PublisherController {
         publisherService.save(Publisher);
         return true;
     }
-
-
 }

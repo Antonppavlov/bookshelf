@@ -16,5 +16,4 @@ public interface VoteRepository extends JpaRepository<Vote, Long> {// JpaReposit
 
     // Page cодержит результаты выполнения запроса и служебные данные для постраничности
     Page<Vote> findByUsernameContainingIgnoreCaseOrderByUsername(String username, Pageable pageable);// Pageable - параметры для постраничности
-
 }

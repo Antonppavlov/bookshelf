@@ -16,9 +16,9 @@ import java.util.List;
 @Service
 @Transactional
 public class VoteService implements VoteDao {
+
     @Autowired
     private VoteRepository voteRepository;
-
 
     @Override
     public List<Vote> getAll() {

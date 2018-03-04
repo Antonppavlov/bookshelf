@@ -17,13 +17,11 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-
     // получить все записи без сортировки (сортировку уже могут сами выбирать на стороне клиента)
     @RequestMapping("/all")
     public List<Book> getBooks() {
         return bookService.getAll();
     }
-
 
     // возвращает всезаписи с постраничностью
     @RequestMapping("/allPage")
@@ -69,7 +67,6 @@ public class BookController {
         return true;
     }
 
-
     // поиск списка книг по жанру
     @RequestMapping(value = "/searchByGenre")
     public List<Book> getByGenre(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize, @RequestParam("genreId") long genreId) {
@@ -81,6 +78,4 @@ public class BookController {
     public byte[] getContent(@RequestParam("bookId") long bookId) {
         return bookService.getContent(bookId);
     }
-
-
 }

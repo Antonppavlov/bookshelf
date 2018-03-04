@@ -14,5 +14,4 @@ public interface PublisherRepository extends JpaRepository<Publisher, Long> {
     List<Publisher> findByNameContainingIgnoreCaseOrderByName(String name);
 
     Page<Publisher> findByNameContainingIgnoreCaseOrderByName(String name, Pageable pageable);
-
 }

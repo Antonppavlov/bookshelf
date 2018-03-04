@@ -26,6 +26,7 @@ public class AuthorService implements AuthorDao {
         return authorRepository.findAll();
     }
 
+    @Override
     public List<Author> getAll(Sort sort) {
         return authorRepository.findAll(sort);
     }
