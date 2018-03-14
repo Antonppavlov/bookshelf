@@ -18,42 +18,42 @@ public class BookController {
     private BookService bookService;
 
     // получить все записи без сортировки (сортировку уже могут сами выбирать на стороне клиента)
-    @RequestMapping("/all")
+    @GetMapping(value = "/all")
     public List<Book> getBooks() {
         return bookService.getAll();
     }
 
     // возвращает всезаписи с постраничностью
-    @RequestMapping("/allPage")
+    @GetMapping(value = "/allPage")
     public List<Book> allPage(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize) {
         return bookService.getAll(pageNumber, pageSize, "fio", Sort.Direction.ASC).getContent();
     }
 
     // поиск записей без постраничности (сразу весь список)
-    @RequestMapping("/search")
+    @GetMapping(value = "/search")
     public List<Book> search(@RequestParam("fio") String fio) {
         return bookService.search(fio);
     }
 
     // поиск записей с постраничностью
-    @RequestMapping("/searchPage")
+    @GetMapping(value = "/searchPage")
     public List<Book> searchPage(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize, @RequestParam("fio") String fio) {
         return bookService.search(pageNumber, pageSize, "fio", Sort.Direction.ASC, fio).getContent(); // т.к. возвращается объект Page, надо у него вызвать getContent, чтобы получить коллекцию
     }
 
-    @RequestMapping("/get")
+    @GetMapping
     public Book get(@RequestParam("id") long id) {
         return bookService.get(id);
     }
 
-    @RequestMapping("/delete")
+    @DeleteMapping
     public boolean delete(@RequestParam("id") long id) {
         bookService.delete(bookService.get(id));// сначала получаем автора по id, потом его удаляем
         return true;
     }
 
     // добавить PDF к определенное книге
-    @RequestMapping(value = "/addContent", method = RequestMethod.POST)
+    @PostMapping(value = "/addContent")
     public boolean addContent(@RequestBody byte[] content, @RequestParam("bookId") long bookId) {
         Book book = bookService.get(bookId); // сначала получаем саму книгу
         book.setContent(content); // обновляем контент
@@ -61,20 +61,20 @@ public class BookController {
         return true;
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PostMapping
     public boolean add(@RequestBody Book book) {
         bookService.save(book);
         return true;
     }
 
     // поиск списка книг по жанру
-    @RequestMapping(value = "/searchByGenre")
+    @GetMapping(value = "/searchByGenre")
     public List<Book> getByGenre(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize, @RequestParam("genreId") long genreId) {
         return bookService.findByGenre(pageNumber, pageSize, "name", Sort.Direction.ASC, genreId).getContent();
     }
 
     // получение PDF контента по id книги
-    @RequestMapping(value = "/getContent")
+    @GetMapping(value = "/getContent")
     public byte[] getContent(@RequestParam("bookId") long bookId) {
         return bookService.getContent(bookId);
     }

@@ -18,41 +18,41 @@ public class AuthorController {
     private AuthorService authorService;
 
     // получить все записи без сортировки (сортировку уже могут сами выбирать на стороне клиента)
-    @RequestMapping("/all")
+    @GetMapping(value = "/all")
     public List<Author> getAuthors() {
         return authorService.getAll();
     }
 
     // возвращает всезаписи с постраничностью
-    @RequestMapping("/allPage")
+    @GetMapping(value = "/allPage")
     public List<Author> allPage(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize) {
         return authorService.getAll(pageNumber, pageSize, "fio", Sort.Direction.ASC).getContent();
     }
 
     // поиск записей без постраничности (сразу весь список)
-    @RequestMapping("/search")
+    @GetMapping(value = "/search")
     public List<Author> search(@RequestParam("fio") String fio) {
         return authorService.search(fio);
     }
 
     // поиск записей с постраничностью
-    @RequestMapping("/searchPage")
+    @GetMapping(value = "/searchPage")
     public List<Author> searchPage(@RequestParam("pageNumber") int pageNumber, @RequestParam("pageSize") int pageSize, @RequestParam("fio") String fio) {
         return authorService.search(pageNumber, pageSize, "fio", Sort.Direction.ASC, fio).getContent();// т.к. возвращается объект Page, надо у него вызвать getContent, чтобы получить коллекцию
     }
 
-    @RequestMapping(value = "/get",method = RequestMethod.GET)
+    @GetMapping
     public Author get(@RequestParam("id") long id) {
         return authorService.get(id);
     }
 
-    @RequestMapping("/delete")
+    @DeleteMapping
     public boolean delete(@RequestParam("id") long id) {
         authorService.delete(authorService.get(id));// сначала получаем автора по id, потом его удаляем
         return true;
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PostMapping
     public boolean add(@RequestBody Author author) {
         authorService.save(author);
         return true;
