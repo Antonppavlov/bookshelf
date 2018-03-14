@@ -41,7 +41,7 @@ public class AuthorController {
         return authorService.search(pageNumber, pageSize, "fio", Sort.Direction.ASC, fio).getContent();// т.к. возвращается объект Page, надо у него вызвать getContent, чтобы получить коллекцию
     }
 
-    @RequestMapping("/get")
+    @RequestMapping(value = "/get",method = RequestMethod.GET)
     public Author get(@RequestParam("id") long id) {
         return authorService.get(id);
     }

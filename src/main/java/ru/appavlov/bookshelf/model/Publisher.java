@@ -11,14 +11,14 @@ import org.hibernate.annotations.SelectBeforeUpdate;
 import javax.persistence.*;
 import java.util.List;
 
-@EqualsAndHashCode(of = "id")
+@Entity
 @Table(catalog = "library")
-@Getter
-@Setter
+@EqualsAndHashCode(of = "id")
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate
-@Entity
+@Getter
+@Setter
 public class Publisher {
 
     @Id
