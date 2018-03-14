@@ -4,3 +4,5 @@
 
 Учебный проект
 ##### https://hub.docker.com/r/antonppavlov/bookshelf/
+##### http://localhost:8080/swagger-ui.html
+
