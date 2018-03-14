@@ -10,6 +10,8 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.util.Collections;
+
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {
@@ -28,7 +30,7 @@ public class SwaggerConfig {
     private ApiInfo metaInfo() {
 
 
-        return  new ApiInfo(
+        return new ApiInfo(
                 "API сервиса bookshelf",
                 "Автоматически сгенерированная Swagger документация по API сервиса Bookshelf",
                 "0.0.1",
@@ -41,7 +43,7 @@ public class SwaggerConfig {
                         "anton.it.pavlov@gmail.com"),
 
                 "Apache License Version 2.0",
-                "https://www.apache.org/licesen.html"
-        );
+                "https://www.apache.org/licesen.html",
+                Collections.emptyList());
     }
 }
